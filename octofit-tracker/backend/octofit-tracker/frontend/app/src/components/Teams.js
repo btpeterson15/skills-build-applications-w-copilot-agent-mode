@@ -19,12 +19,29 @@ const Teams = () => {
 
   return (
     <div>
-      <h2>Teams</h2>
-      <ul>
-        {teams.map((team, idx) => (
-          <li key={idx}>{JSON.stringify(team)}</li>
-        ))}
-      </ul>
+      <h2 className="mb-4 display-6">Teams</h2>
+      <div className="card shadow-sm">
+        <div className="card-body">
+          <table className="table table-striped table-hover">
+            <thead className="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {teams.map((team, idx) => (
+                <tr key={idx}>
+                  <td>{idx + 1}</td>
+                  <td>{team.name}</td>
+                  <td>{team.description}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
